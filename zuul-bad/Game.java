@@ -67,13 +67,6 @@ public class Game
 	secretRoom.setExits("north", campRoom);
 	
         currentRoom = outside;  // start game outside
-    }
-    public void showAll()
-    {
-	for(String command : validCommands) {
-		System.out.print(command + " ");
-	}
-	System.out.println();
     }	    
     /**
      *  Main play routine.  Loops until end of play.
@@ -151,7 +144,7 @@ public class Game
         System.out.println("around at the university.");
         System.out.println();
         System.out.println("Your command words are:");
-        showAll();
+        parser.showCommands();
     }
 
     /** 
