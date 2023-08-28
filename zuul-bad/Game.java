@@ -19,10 +19,7 @@ public class Game
 {
     private Parser parser;
     private Room currentRoom;
-    // a constant array that holds all valid command words
-    private static final String validCommands[] = {
-	"go", "quit", "help", "look"
-    };    
+       
     /**
      * Create the game and initialise its internal map.
      */
