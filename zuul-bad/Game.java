@@ -45,13 +45,27 @@ public class Game
         secretRoom = new Room("Você achou a sala secreta, parabéns!!");
         
         // initialise room exits
-        outside.setExits(null, admRoom, null, null);
+        /*outside.setExits(null, admRoom, null, null);    
         ilhasRoom.setExits(null, null, bathRoom, admRoom);
         campRoom.setExits(admRoom, bathRoom, secretRoom, null);
         admRoom.setExits(null, ilhasRoom, campRoom, outside);
-	bathRoom = new Room(ilhasRoom, null, null, campRoom);
-        secretRoom.setExits(campRoom, null, null, null);
+	bathRoom.setExits(ilhasRoom, null, null, campRoom);
+        secretRoom.setExits(campRoom, null, null, null);*/
 
+	// initialise room exits update
+	outside.setExits("east", admRoom);
+	ilhasRoom.setExits("south", bathRoom);
+	ilhasRoom.setExits("west", admRoom);
+	campRoom.setExits("north", admRoom);
+	campRoom.setExits("east", bathRoom);
+	campRoom.setExits("south", secretRoom);
+	admRoom.setExits("east", ilhasRoom);
+	admRoom.setExits("south", campRoom);
+	admRoom.setExits("west", outside);
+	bathRoom.setExits("north", ilhasRoom);
+	bathRoom.setExits("west", campRoom);
+	secretRoom.setExits("north", campRoom);
+	
         currentRoom = outside;  // start game outside
     }
 
