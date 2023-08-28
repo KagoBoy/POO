@@ -19,7 +19,10 @@ public class Game
 {
     private Parser parser;
     private Room currentRoom;
-        
+    // a constant array that holds all valid command words
+    private static final String validCommands[] = {
+	"go", "quit", "help", "look"
+    };    
     /**
      * Create the game and initialise its internal map.
      */
@@ -68,7 +71,13 @@ public class Game
 	
         currentRoom = outside;  // start game outside
     }
-
+    public void showAll()
+    {
+	for(String command : validCommands) {
+		System.out.print(command + " ");
+	}
+	System.out.println();
+    }	    
     /**
      *  Main play routine.  Loops until end of play.
      */
@@ -117,13 +126,16 @@ public class Game
 
         String commandWord = command.getCommandWord();
         if (commandWord.equals("help")) {
-            printHelp();
+            	printHelp();
         }
         else if (commandWord.equals("go")) {
-            goRoom(command);
+            	goRoom(command);
         }
+	else if (commandWord.equals("look")) {
+		look();
+	}
         else if (commandWord.equals("quit")) {
-            wantToQuit = quit(command);
+            	wantToQuit = quit(command);
         }
 
         return wantToQuit;
@@ -142,7 +154,7 @@ public class Game
         System.out.println("around at the university.");
         System.out.println();
         System.out.println("Your command words are:");
-        System.out.println("   go quit help");
+        showAll();
     }
 
     /** 
@@ -185,5 +197,9 @@ public class Game
         else {
             return true;  // signal that we want to quit
         }
+    }
+    private void look()
+    {
+	System.out.println(currentRoom.getLongDescription());
     }
 }
