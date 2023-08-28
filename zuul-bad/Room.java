@@ -54,4 +54,14 @@ public class Room
         return exits.get(direction);
     }
 
+    public String getExitString()
+    {
+        String returnString = "Exits:";
+        Set<String> keys = exits.keySet();
+        for(String exit : keys){
+            returnString += " " + exit;
+        }
+        return returnString;
+    }
+
 }
