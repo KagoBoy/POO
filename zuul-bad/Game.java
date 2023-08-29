@@ -89,7 +89,7 @@ public class Game
     // printLocationInfo atualizado, porém será usado o getLongDescription
     /* private void printLocationInfo()
     {	
-	System.out.println("You are " + currentRoom.getDescription() + ".\n" + getExitString());
+	System.out.println("You are " + currentRoom.getDescription() + ".\n" + currentRoom.getExitString());
     }*/
 
 	
