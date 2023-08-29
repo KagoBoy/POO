@@ -85,11 +85,14 @@ public class Game
         }
         System.out.println("Thank you for playing.  Good bye.");
     }
-    private void printLocationInfo()
+
+    // printLocationInfo atualizado, porém será usado o getLongDescription
+    /* private void printLocationInfo()
     {	
-	System.out.println("You are " + currentRoom.getDescription());
-	System.out.print("Exits: ");
-    }
+	System.out.println("You are " + currentRoom.getDescription() + ".\n" + getExitString());
+    }*/
+
+	
     /**
      * Print out the opening message for the player.
      */
