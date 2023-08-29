@@ -85,7 +85,11 @@ public class Game
         }
         System.out.println("Thank you for playing.  Good bye.");
     }
-
+    private void printLocationInfo()
+    {	
+	System.out.println("You are " + currentRoom.getDescription());
+	System.out.print("Exits: ");
+    }
     /**
      * Print out the opening message for the player.
      */
