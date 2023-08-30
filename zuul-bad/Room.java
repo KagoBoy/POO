@@ -68,12 +68,16 @@ public class Room
 
     public String getLongDescription()
     {
-        return "You are " + description + "Item: " + item + ".\n" + getExitString();
+        return "You are " + description + getItem() + ".\n" + getExitString();
     }
 
     public void setItem(Items item) 
     {
         this.item = item;
     }
+
+    public String getItem()
+    {
+        String returnString = "Peso: " + item.getDescription() + ".\n" + "Peso: " + item.getWeight();
 
 }
