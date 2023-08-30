@@ -79,5 +79,6 @@ public class Room
     public String getItem()
     {
         String returnString = "Peso: " + item.getDescription() + ".\n" + "Peso: " + item.getWeight();
+        return returnString;
 
 }
