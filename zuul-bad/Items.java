@@ -1,4 +1,7 @@
-public class Items{
+public class Items
+{
+        private description;
+        private weight;
 
 
   
