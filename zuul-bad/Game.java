@@ -65,6 +65,15 @@ public class Game
 	bathRoom.setExits("north", ilhasRoom);
 	bathRoom.setExits("west", campRoom);
 	secretRoom.setExits("north", campRoom);
+
+	//Itens de cada sala
+	outside.setItem("Caneta azul", 0.018);
+	ilhasRoom.setItem("Cadeado", 0.060);
+	campRoom.setItem("Cadeira Gamer", 20.15);
+	admRoom.setItem("Vaso de planta", 0.035);
+	bathRoom.setItem("Chave de uma sala secreta", 0.010);
+	secretRoom.setItem("Bola de pilates", 0.045);
+	    
 	
         currentRoom = outside;  // start game outside
     }	    
