@@ -16,6 +16,7 @@ public class Room
 {
     private String description;
     private HashMap<String, Roomm> exits;
+    private Items item;
     /**
      * Create a room described "description". Initially, it has
      * no exits. "description" is something like "a kitchen" or
@@ -67,6 +68,11 @@ public class Room
     public String getLongDescription()
     {
         return "You are " + description + ".\n" + getExitString();
+    }
+
+    public void setItem(Items item) 
+    {
+        this.item = item;
     }
 
 }
