@@ -20,6 +20,7 @@ public class Game
     private Parser parser;
     private Room currentRoom;
     private Room previousRoom;
+    private Room tempoparyRoom;	
        
     /**
      * Create the game and initialise its internal map.
@@ -204,9 +205,11 @@ public class Game
 
         }
     }
-    private void goBack() {
+    private void goBack() {    
+	Room temporaryRoom = previousRoom;    
         if (previousRoom != null) {
-            Room currentRoom = Room previousRoom;
+	    Room previousRoom = currentRoom;	
+            Room currentRoom = temporaryRoom;	
             System.out.println(currentRoom.getLongDescription());
 	    System.out.println();
         } else {
