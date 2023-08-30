@@ -189,6 +189,14 @@ public class Game
             currentRoom = nextRoom;
             System.out.println(currentRoom.getLongDescription());
             System.out.println();
+			ArrayList<Items> itemsInRoom = nextRoom.getItems();
+            if (!itemsInRoom.isEmpty()) {
+                System.out.println("You see the following items:");
+                for (Item item : itemsInRoom) {
+                    System.out.println("- " + item.getDescription() + " (Weight: " + item.getWeight() + ")");
+                }
+            }
+
         }
     }
 
