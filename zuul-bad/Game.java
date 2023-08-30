@@ -19,6 +19,7 @@ public class Game
 {
     private Parser parser;
     private Room currentRoom;
+    private Room previousRoom;
        
     /**
      * Create the game and initialise its internal map.
@@ -143,9 +144,12 @@ public class Game
 	else if (commandWord.equals("eat")) {
 		eat();
 	}
-        else if (commandWord.equals("quit")) {
+	else if (commandWord.equals("back")) {
+		goBack();
+	}
+    	else if (commandWord.equals("quit")) {
             	wantToQuit = quit(command);
-        }
+    	}
 
         return wantToQuit;
     }
@@ -181,6 +185,7 @@ public class Game
         String direction = command.getSecondWord();
 
         // Try to leave current room.
+	Room previousRoom = currentRoom;
         Room nextRoom = currentRoom.getExit(direction);
         if (nextRoom == null) {
             System.out.println("There is no door!");
@@ -189,7 +194,7 @@ public class Game
             currentRoom = nextRoom;
             System.out.println(currentRoom.getLongDescription());
             System.out.println();
-			ArrayList<Items> itemsInRoom = nextRoom.getItems();
+	    ArrayList<Items> itemsInRoom = nextRoom.getItems();
             if (!itemsInRoom.isEmpty()) {
                 System.out.println("You see the following items:");
                 for (Item item : itemsInRoom) {
@@ -199,6 +204,15 @@ public class Game
 
         }
     }
+    private void goBack() {
+        if (previousRoom != null) {
+            Room currentRoom = Room previousRoom;
+            System.out.println(currentRoom.getLongDescription());
+	    System.out.println();
+        } else {
+            System.out.println("You can't go back any further.");
+        }
+    }	
 
     /** 
      * "Quit" was entered. Check the rest of the command to see
