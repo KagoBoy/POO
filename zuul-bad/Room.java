@@ -69,7 +69,7 @@ public class Room
 
     public String getLongDescription()
     {
-        return "You are " + description + getItems() + ".\n" + getExitString();
+        return "You are " + description + ".\n" + getExitString();
     }
 
     public void setItem(Items item) 
